@@ -2,6 +2,7 @@ import express from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import helmet from 'helmet';
+
 import {
   connectToDatabase,
   CORS_ORIGIN,
@@ -9,6 +10,8 @@ import {
   logger,
   signals,
 } from '@youtube-clone/yt-backend/utils';
+
+import userRouter from './app/modules/user/user.route';
 
 const app = express();
 
@@ -23,9 +26,9 @@ app.use(
 );
 app.use(helmet());
 
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to yt-express!' });
-});
+// Routers
+// User
+app.use('/api/users', userRouter);
 
 const port = process.env.port || 3333;
 
