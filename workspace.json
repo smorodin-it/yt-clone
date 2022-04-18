@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "data-models": "libs/data-models",
+    "yt-backend-utils": "libs/yt-backend/utils",
     "yt-backend-yt-express": "apps/yt-backend/yt-express",
     "yt-frontend-https": "libs/yt-frontend/https",
     "yt-frontend-routes": "libs/yt-frontend/routes",

@@ -1,0 +1,23 @@
+{
+  "root": "libs/yt-backend/utils",
+  "sourceRoot": "libs/yt-backend/utils/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/yt-backend/utils/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/yt-backend/utils"],
+      "options": {
+        "jestConfig": "libs/yt-backend/utils/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
