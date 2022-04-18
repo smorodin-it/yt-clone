@@ -10,19 +10,32 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@youtube-clone/data-models": ["libs/data-models/src/index.ts"],
+      "@youtube-clone/data-models": [
+        "libs/data-models/src/index.ts"
+      ],
+      "@youtube-clone/yt-backend/utils": [
+        "libs/yt-backend/utils/src/index.ts"
+      ],
       "@youtube-clone/yt-frontend/https": [
         "libs/yt-frontend/https/src/index.ts"
       ],
       "@youtube-clone/yt-frontend/routes": [
         "libs/yt-frontend/routes/src/index.ts"
       ]
-    }
+    },
+    //    custom options
+    "esModuleInterop": true
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }
