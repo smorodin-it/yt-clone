@@ -1,0 +1,23 @@
+{
+  "root": "libs/yt-frontend/https",
+  "sourceRoot": "libs/yt-frontend/https/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/yt-frontend/https/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/yt-frontend/https"],
+      "options": {
+        "jestConfig": "libs/yt-frontend/https/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

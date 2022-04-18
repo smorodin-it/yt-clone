@@ -1,0 +1,52 @@
+{
+  "root": "apps/yt-backend/yt-express",
+  "sourceRoot": "apps/yt-backend/yt-express/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/node:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/yt-backend/yt-express",
+        "main": "apps/yt-backend/yt-express/src/main.ts",
+        "tsConfig": "apps/yt-backend/yt-express/tsconfig.app.json",
+        "assets": ["apps/yt-backend/yt-express/src/assets"]
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "extractLicenses": true,
+          "inspect": false,
+          "fileReplacements": [
+            {
+              "replace": "apps/yt-backend/yt-express/src/environments/environment.ts",
+              "with": "apps/yt-backend/yt-express/src/environments/environment.prod.ts"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/node:node",
+      "options": {
+        "buildTarget": "yt-backend-yt-express:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/yt-backend/yt-express/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/yt-backend/yt-express"],
+      "options": {
+        "jestConfig": "apps/yt-backend/yt-express/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

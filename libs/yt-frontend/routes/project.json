@@ -1,0 +1,23 @@
+{
+  "root": "libs/yt-frontend/routes",
+  "sourceRoot": "libs/yt-frontend/routes/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/yt-frontend/routes/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/yt-frontend/routes"],
+      "options": {
+        "jestConfig": "libs/yt-frontend/routes/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
