@@ -1,0 +1,73 @@
+{
+  "root": "apps/yt-frontend/yt-react",
+  "sourceRoot": "apps/yt-frontend/yt-react/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/yt-frontend/yt-react",
+        "index": "apps/yt-frontend/yt-react/src/index.html",
+        "baseHref": "/",
+        "main": "apps/yt-frontend/yt-react/src/main.tsx",
+        "polyfills": "apps/yt-frontend/yt-react/src/polyfills.ts",
+        "tsConfig": "apps/yt-frontend/yt-react/tsconfig.app.json",
+        "assets": [
+          "apps/yt-frontend/yt-react/src/favicon.ico",
+          "apps/yt-frontend/yt-react/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/yt-frontend/yt-react/src/environments/environment.ts",
+              "with": "apps/yt-frontend/yt-react/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "yt-frontend-yt-react:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "yt-frontend-yt-react:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/yt-frontend/yt-react/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/yt-frontend/yt-react"],
+      "options": {
+        "jestConfig": "apps/yt-frontend/yt-react/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

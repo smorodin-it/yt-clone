@@ -1,0 +1,28 @@
+{
+  "root": "apps/yt-frontend/yt-react-e2e",
+  "sourceRoot": "apps/yt-frontend/yt-react-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/yt-frontend/yt-react-e2e/cypress.json",
+        "devServerTarget": "yt-frontend-yt-react:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "yt-frontend-yt-react:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/yt-frontend/yt-react-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["yt-frontend-yt-react"]
+}

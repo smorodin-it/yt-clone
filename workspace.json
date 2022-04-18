@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "yt-frontend-yt-react": "apps/yt-frontend/yt-react",
+    "yt-frontend-yt-react-e2e": "apps/yt-frontend/yt-react-e2e"
+  }
+}
