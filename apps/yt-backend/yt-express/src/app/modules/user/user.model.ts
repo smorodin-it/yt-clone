@@ -24,6 +24,8 @@ export class User implements IUserModel {
   }
 }
 
+const user = new User();
+
 export const UserModel = getModelForClass(User, {
   schemaOptions: {
     timestamps: true,
